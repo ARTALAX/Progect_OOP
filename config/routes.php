@@ -1,7 +1,9 @@
 <?php
 use App\Kernel\Router\Router;
 
-Router::page('/home', 'home');
-Router::page('/books', 'books');
-Router::page('/add', 'add');
-Router::enable();
+Router::route('home', 'home');
+Router::route('books', 'books');
+Router::route('add', 'add');
+Router::route('validate-form', 'FormController@validateForm');
+Router::handleRequest();
+return Router::getRoutes();

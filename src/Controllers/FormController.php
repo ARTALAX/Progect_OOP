@@ -2,6 +2,9 @@
 namespace App\Controllers;
 
 use App\Kernel\Validator\Validator;
+use App\Kernel\Http\Redirect;
+use App\Kernel\Session\Session;
+
 
 class FormController
 {
@@ -21,16 +24,27 @@ class FormController
 
 		// Создаем экземпляр валидатора и валидируем данные
 		$validator = new Validator();
-		$errors = $validator->validate($formData, $rules);
-
+		($errors = $validator->validate($formData, $rules));
 		if (!empty($errors)) {
-			// Обработка ошибок валидации
-			foreach ($errors as $field => $messages) {
-				foreach ($messages as $message) {
-					echo "<p>$message</p>";
-				}
+			foreach ($errors as $field => $error) {
+				(new Session())->set($field, $error);
+
 			}
+			(new Redirect())->to('add');
+
+
+			// Обработка ошибок валидации
+			// foreach ($errors as $field => $messages) {
+			// 	foreach ($messages as $message) {
+			// 		echo "<p>$message</p>";
+			// 		if ($message) {
+
+			// 		}
+
+			// }
+			// }
 		} else {
+
 			// Успешная обработка формы
 			echo "<p>Форма успешно валидирована!</p>";
 		}

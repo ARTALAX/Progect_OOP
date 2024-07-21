@@ -3,8 +3,8 @@ namespace App\Controllers;
 
 class BooksController
 {
-	public function da()
+	public function index()
 	{
-		return "dsf";
+		echo "Hello from BooksController!";
 	}
 }

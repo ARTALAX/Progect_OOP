@@ -16,6 +16,7 @@ class Request
 	{
 
 		return new static($_GET, $_POST, $_FILES, $_SERVER, $_COOKIE);
+		
 	}
 
 }

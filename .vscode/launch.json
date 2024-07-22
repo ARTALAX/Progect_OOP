@@ -9,7 +9,7 @@
 			"type": "php",
 			"request": "launch",
 			"runtimeArgs": ["-S", "localhost:8000", "-t", "."],
-			"port": 9003,
+			"port": 9000,
 			"serverReadyAction": {
 				"action": "openExternally"
 			}
@@ -22,17 +22,18 @@
 			"cwd": "${fileDirname}",
 			"runtimeExecutable": "C:\\OSPanel\\modules\\PHP-8.3\\PHP\\php.exe",
 			"externalConsole": false,
-			"port": 9003
+			"port": 9000
 		},
 		{
 			"name": "Listen for Xdebug",
 			"type": "php",
 			"request": "launch",
-			"port": 9003,
+			"port": 9000,
+			// "hostname": "127.0.0.2",
 			"log": true,
 			"stopOnEntry": true,
 			"pathMappings": {
-				"C:\\OSPanel\\home\\MyProgects\\public\\Progect_OOP": "${workspaceFolder}"
+				"/opt/lampp/htdocs/Progect_OOP": "${workspaceFolder}"
 			}
 		}
 	]

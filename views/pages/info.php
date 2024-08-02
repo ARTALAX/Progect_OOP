@@ -1,1 +1,2 @@
-<?php phpinfo(); ?>
+<?php phpinfo();
+zend_version() ?>

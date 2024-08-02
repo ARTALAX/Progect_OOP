@@ -5,6 +5,7 @@ Router::route('home', 'home');
 Router::route('books', 'books');
 Router::route('add', 'add');
 Router::route('info', 'info');
+Router::route('info2', 'info2');
 Router::route('validate-form', 'FormController@validateForm');
 // Router::route('validate-form', 'FormController@validateForm');
 // Router::route('validate-form', 'FormController@validateForm');
